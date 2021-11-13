@@ -1,5 +1,5 @@
-# from django.contrib import admin
+from django.contrib import admin
 
-# from posts.models import TalkTalk
+from posts.models import TalkTalk
 
-# admin.site.register(TalkTalk)
+admin.site.register(TalkTalk)
