@@ -2,7 +2,6 @@ from django.db import models
 from django.utils import timezone
 from django.db.models.fields.related import ForeignKey
 from nu_talker.models import NuTalker
-
 # Create your models here.
 class TalkTalk(models.Models):
     body = models.TextField(max_length=300)
