@@ -21,3 +21,8 @@ def LoginView(request):
 
     form = LogInForm()
     return render(request, 'signupform.html', {'form':form})
+
+
+def TalkLogOut(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("Homepage"))
