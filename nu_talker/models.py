@@ -8,3 +8,4 @@ class NuTalker(AbstractUser):
     age = models.IntegerField(null=True)
     hometown = models.CharField(max_length=150)
     connection = models.ManyToManyField("self", symmetrical=False)
+    bio = models.TextField(null=True)
