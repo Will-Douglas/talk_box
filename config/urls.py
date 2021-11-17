@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from authentication import views
 from nu_talker import views as nu_view
 from posts import views as tlk_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', nu_view.index, name="Homepage"),
-    path('posts/<int:post_id>/', tlk_view.talk_view, name="Talking")
+    path('login/', views.LoginView, name="Login"),
+    path('logout/', views.TalkLogOut, name="Logout"),
+    path('signup/', views.SignUpView, name="Signup"),
+    path('posts/<int:post_id>/', tlk_view.talk_view, name="Talking"),
 ]
