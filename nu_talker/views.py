@@ -6,5 +6,5 @@ from posts.models import TalkTalk
 
 def index(request):
     all_posts = TalkTalk.objects.all()
-
+    
     return render(request, "index.html", {"all_posts":all_posts})
