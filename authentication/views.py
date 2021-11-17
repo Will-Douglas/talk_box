@@ -43,3 +43,9 @@ def SignUpView(request):
 
     form = SignUpForm()
     return render(request, "signupform.html", {"form":form})
+
+
+def TalkerProfile(request):
+    talker_user = TalkTalk.objects.all()
+    talker_speak = TalkTalk.objects.filter(talker_user = request.user)
+    return render(request, "talkerprofile.html")
