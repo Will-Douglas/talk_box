@@ -26,4 +26,5 @@ urlpatterns = [
     path('logout/', views.TalkLogOut, name="Logout"),
     path('signup/', views.SignUpView, name="Signup"),
     path('posts/<int:post_id>/', tlk_view.talk_view, name="Talking"),
+    path('talker_page/<int:user_id>/', nu_view.profile, name="Profile"),
 ]
