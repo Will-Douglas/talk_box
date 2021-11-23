@@ -33,7 +33,7 @@ def SignUpView(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
-            nu_talker = NuTalker.objects.create_user(username=data['username'], password=data['password'],
+            nu_profile = NuTalker.objects.create_user(username=data['username'], password=data['password'],
                                                         age=data['age'], hometown=data['hometown'], bio=data['bio'])
         user = authenticate(
             request, username=data['username'], password=data['password'])
