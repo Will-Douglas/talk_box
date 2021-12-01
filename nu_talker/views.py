@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+import nu_talker
 
 from nu_talker.models import NuTalker
 from posts.models import TalkTalk
@@ -17,5 +18,5 @@ def index(request):
 
 def profile(request, user_id: int):
     tha_talker = NuTalker.objects.get(id=user_id)
-    all_posts = TalkTalk.objects.filter(talker_user=user_id)
+    all_posts = TalkTalk.objects.filter(spokesmen = user_id)
     return render(request, "talkerprofile.html", {"all_posts": all_posts, "tha_talker": tha_talker})
