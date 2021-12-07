@@ -27,7 +27,7 @@ def create_post(request):
                 talker_user = request.user
             )
             pattern = re.compile(r'@(\w+)')
-            matches = pattern.findall(post_create)
+            matches = pattern.findall(post_create.body)
             for match in matches:
                 if NuTalker.objects.filter(username=match).exists():
                     talk_user = NuTalker.objects.get(username=match)
@@ -36,5 +36,5 @@ def create_post(request):
                         user = talk_user
                     )
                 
-    form = PostForm
+    form = PostForm()
     return render(request, "createdpost.html", {"form":form})
