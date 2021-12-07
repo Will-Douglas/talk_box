@@ -27,4 +27,5 @@ urlpatterns = [
     path('signup/', views.SignUpView, name="Signup"),
     path('posts/<int:post_id>/', tlk_view.talk_view, name="Talking"),
     path('talker_page/<int:user_id>/', nu_view.profile, name="Profile"),
+    path('new_post/', tlk_view.create_post, name='Create_Post'),
 ]
