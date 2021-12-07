@@ -8,13 +8,10 @@ from nu_talker.models import NuTalker
 from posts.forms import PostForm
 from posts.models import TalkTalk
 
-
 #Create your views here.
-
 def talk_view(request, post_id:int):
     speaking = TalkTalk.objects.get(id=post_id)
     return render(request, 'chatpage.html', {'speaking':speaking})
-
 
 @login_required
 def create_post(request):
@@ -24,7 +21,7 @@ def create_post(request):
             data = form.cleaned_data
             post_create = TalkTalk.objects.create(
                 body = data["body"],
-                talker_user = request.user
+                spokesmen = request.user
             )
             pattern = re.compile(r'@(\w+)')
             matches = pattern.findall(post_create.body)
