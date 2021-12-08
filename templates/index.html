@@ -1,7 +1,7 @@
 <h1>Got it working</h1>
 
-{% for post in connection_list %}
+{% for post in all_posts %}
 
-    <p><a href="/talker_page/{{post.talker_user.id}}/">{{post.talker_user}}</a></p>
+    <p><a href='posts/{{post.id}}/'>{{post.body}}</a></p>
 
 {%  endfor%}
