@@ -28,3 +28,11 @@ def ConnectionView(request, user_id: int):
         auth_user.connected.add(connected)
         auth_user.save()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def DisconnectionView(request, user_id: int):
+    connected = NuTalker.objects.get(id=user_id)
+    if request.user.is_authenticated:
+        auth_user = NuTalker.objects.get(id=request.user.id)
+        auth_user.connected.remove(connected)
+        auth_user.save()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
