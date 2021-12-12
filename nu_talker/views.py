@@ -12,6 +12,11 @@ def index(request):
     connection_list = []
 
     all_posts = TalkTalk.objects.all()
+    for post in all_posts:
+        if post.talker_user in request.user.connected.all() or post.talker_user == request.user:
+            connection_list.append(post)
+    connection_list.sort(key=lambda x: x.posted_tweet, reverse=True)
+    return render(request, "index.html", {"all_post": all_posts, "connection_list": connection_list})
    
 
     return render(request, "index.html", {"all_posts":all_posts})
