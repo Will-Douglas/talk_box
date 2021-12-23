@@ -41,3 +41,5 @@ def DisconnectionView(request, user_id: int):
         auth_user.connected.remove(connected)
         auth_user.save()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+

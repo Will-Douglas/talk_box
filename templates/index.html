@@ -3,8 +3,11 @@
 
 <button><a href="/">Home</a></button>
 <button><a href="/login/">Login</a></button>
+<button><a href="/talker_page/{{request.user.id}}/">Talk Page</a></button>
+<button><a href="/new_post/">Talk Box</a></button>
 <button><a href="/logout/">Logout</a></button>
 <button><a href="/signup/">Sign Up</a></button>
+
 
 {% for post in all_posts %}
 
