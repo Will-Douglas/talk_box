@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from authentication import views
 from nu_talker import views as nu_view
+import nu_talker
 from posts import views as tlk_view
 
 urlpatterns = [
@@ -27,5 +28,8 @@ urlpatterns = [
     path('signup/', views.SignUpView, name="Signup"),
     path('posts/<int:post_id>/', tlk_view.talk_view, name="Talking"),
     path('talker_page/<int:user_id>/', nu_view.profile, name="Profile"),
-    path('new_post/', tlk_view.create_post, name='Create_Post'),
+    path('new_post/', tlk_view.create_post, name="Create_Post"),
+    path('connection/<int:user_id>/', nu_view.ConnectionView, name="Connect"),
+    path('disconnection/<int:user_id>/', nu_view.DisconnectionView, name="Disconnect"),
+
 ]

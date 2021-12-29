@@ -5,7 +5,10 @@
 <button><a href="/logout/">Logout</a></button>
 <button><a href="/signup/">Sign Up</a></button>
 
+<h3>{{tha_talker.followers.count}}</h3>
 
+<a href='/connection/{{tha_talker.id}}'>Connection</a>
+<a href='/disconnection/{{tha_talker.id}}'>Disconnection</a>
 
 <ul>
 
@@ -19,3 +22,11 @@
     {% endfor %}
     
 </ul>
+
+<p>Connection List</p>
+
+<p>{% for c in tha_talker.followers.all %}
+
+        <p>{{c}}</p>
+    {% endfor %}
+</p>
