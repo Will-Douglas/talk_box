@@ -9,8 +9,9 @@
 <button><a href="/signup/">Sign Up</a></button>
 
 
-{% for post in all_posts %}
+{% for statement in connection_list %}
 
-    <p><a href='posts/{{post.id}}/'>{{post.body}}</a></p>
+<p><a href="/talker_page/{{statement.spokesmen.id}}/">{{statement.spokesmen}}</a></p>
+<p><a href="/posts/{{statement.id}}/">{{statement.body}}</a></p>
 
 {%  endfor%}
