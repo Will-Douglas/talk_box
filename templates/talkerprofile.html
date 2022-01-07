@@ -27,6 +27,10 @@
 
 <p>{% for c in tha_talker.connection.all %}
 
-        <p>{{c}}</p>
+        <p><a href={{c}}<a>{{c}}</a></p>
     {% endfor %}
 </p>
+
+{% for connect in connection_list %}
+<p><a href="/talker_page/{{connect.spokesmen.id}}/">{{connect.spokesmen}}</a></p>
+{%  endfor%}
